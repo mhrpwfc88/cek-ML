@@ -12,28 +12,18 @@
         if (isset($_GET['userId']) && isset($_GET['zoneId'])) {
             $userId = $_GET['userId'];
             $zoneId = $_GET['zoneId'];
-
-            // Endpoint API v1
             $url = "https://mlbb.casperproject.net/api/v1/check?userId=" . $userId . "&zoneId=" . $zoneId;
-
-            // Inisiasi cURL
             $ch = curl_init();
-
-            // Set opsi cURL
             curl_setopt($ch, CURLOPT_URL, $url);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_HTTPGET, true);
 
-            // Eksekusi dan ambil response
             $response = curl_exec($ch);
 
-            // Tutup cURL
             curl_close($ch);
 
-            // Ubah response JSON menjadi array PHP
             $result = json_decode($response, true);
 
-            // Cek status response
             if ($result['status'] === true) {
                 $username = $result['data']['username'];
                 $create_country = $result['data']['create_role_country'];
