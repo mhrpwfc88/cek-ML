@@ -1,4 +1,4 @@
-# 🚀 Server Nata 
+# 🚀 Check ML
 
 Selamat datang di **Cek Ml**!, web ini di buat untuk mengecek nama dan region dan termasuk seberapa lama akun di buat
 
